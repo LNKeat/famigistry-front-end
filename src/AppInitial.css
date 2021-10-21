@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+#root{
+  width:100%;
+  height: 100%;
+  background-color: lightgrey;
+}
+p, h1, h2, label{
+  font-family: fantasy;
+}
+
+.component-wrapper{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+  margin: 20px;
+}
+
+/* NavBar content */
+
+.nav-wrapper{
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: lemonchiffon;
+  border: solid 3 rgb(69, 69, 136);
+}
+
+.logo{
+  width: 70%;
+  text-align: left;
+  font-family: fantasy;
+  padding: 20px;
+}
+
+/* Home page content */
+#welcome-page{
+  font-family: fantasy;
+  width:100%;
+  background-image: "./src/media/family_gathering.jpg";
+}
+
+/* Members page content */
+
+#members p, label, input{
+  font-size: 1.5em;
+}
+
+.members-wrapper{
+  display: grid;
+  flex-direction: column;
+  width:100%;
+  height: 100%;
+}
+
+/* New members form content */
+
+.add-member-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  margin: 20px;
+}
+
+.form-section1{
+  width: 100%;
+}
+.form-section2{
+  flex:1;
+  width: 100%;
+}
+
+#submit-new-member{
+  border-radius: 5px;
+  height: 55px;
+}

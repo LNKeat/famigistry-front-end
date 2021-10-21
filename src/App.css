@@ -1,0 +1,147 @@
+*{
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  max-width: 100%;
+  height: 100%;
+}
+
+#root {
+  display: grid;
+  grid-template-rows: 30% auto;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 0;
+  height: 100%;
+}
+
+header {
+  grid-row: 1 / 2;
+  padding: 5% 2% 0 5%;
+  background-color: lightskyblue;
+  color: darkblue;
+}
+.nav-bar {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 60% auto;
+  grid-template-rows: 60% 30%;
+  padding: 0;
+  margin: 0;
+}
+#logo{
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  font-family: fantasy;
+  font-size: 3em;
+}
+#home-btn{
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  width: 110px;
+}
+#find-btn{
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  width: 110px;
+}
+#add-btn{
+  grid-column: 4 / 5;
+  grid-row: 2 / 3;
+  width: 110px;
+}
+
+main, 
+.Members-wrapper,
+.NewMember-wrapper {
+  grid-row: 2 / 5;
+  padding: 20px;
+  margin: 0;
+  background-color: blanchedalmond;
+}
+
+/* home page--- */
+
+.home-info {
+  background-color: blueviolet;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+.home-info div{
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  padding: 5%;
+  background-image: url("./media/family_gathering.jpg");
+  background-repeat: no-repeat;
+  background-size: 700px 550px;
+  font-family: fantasy;
+  text-align: center;
+  color: white;
+}
+
+/* members page */
+
+.members-small-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+#members-list {
+  grid-column: 1 / 2;
+}
+
+/* expanded member details---- */
+
+.member-details {
+  background-color: lightskyblue;
+  overflow: hidden;
+  /* grid-column: 2 / 3; */
+}
+
+.member-details img {
+  width: 60px;
+  height: 60px;
+}
+
+.item-cards{
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  justify-content: space-around;
+  /* width: 800px; */
+}
+
+.item-card {
+  /* flex: 0 0 300px; */
+  flex-basis: 300px;
+  flex-grow: 0;
+  border: solid 1px black;
+  word-wrap: break-word;
+  overflow: hidden;
+  margin: 2%;
+  padding: 2%;
+}
+
+
+/* members cards small version */
+.member-small {
+  border: solid 3px black;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+}
+
+.member-small img {
+  width: 60px;
+  height: 60px
+}
+
+
