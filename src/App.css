@@ -30,17 +30,20 @@ header {
   padding: 0;
   margin: 0;
 }
+
 #logo{
   grid-column: 1 / 2;
   grid-row: 1 / 2;
   font-family: fantasy;
   font-size: 3em;
 }
+
 #home-btn{
   grid-column: 2 / 3;
   grid-row: 2 / 3;
   width: 110px;
 }
+
 #find-btn{
   grid-column: 3 / 4;
   grid-row: 2 / 3;
@@ -64,27 +67,25 @@ main,
 /* home page--- */
 
 .home-info {
-  background-color: blueviolet;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
+  display: flex;
   justify-content: center;
-  background-position: center;
-  height: 100%;
-  width: 100%;
-}
-
-.home-info div{
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  padding: 5%;
+  width: 80%;
+  height: 80%;
+  /* overflow: hidden; */
   background-image: url("./media/family_gathering.jpg");
   background-repeat: no-repeat;
-  background-size: 700px 550px;
+  background-position: center;
+}
+
+.home-info > p {
+  /* flex: 0 0; */
   font-family: fantasy;
   text-align: center;
   color: white;
+  width: 80%;
+  padding: 30px;
 }
+
 
 /* members page */
 
