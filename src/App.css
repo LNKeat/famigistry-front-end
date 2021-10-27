@@ -18,7 +18,7 @@ body, html {
 input {
   width: 95%;
   margin: 5px;
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
 label {
@@ -43,7 +43,7 @@ button {
 
 /* *******header & navbar********** */
 
-header {
+/* header {
   display: flex;
   justify-content: space-between;
   padding: 20px;
@@ -66,7 +66,7 @@ header {
   margin: 0;
   height: 76px;
   width: 380px;
-}
+} */
 
 /* *******components********** */
 
@@ -82,165 +82,11 @@ main,
 
 /* *******home page********** */
 
-.home-wrapper {
-  display: flex;
-  justify-content: center;
-}
 
-.home-info {
-  width: 800px;
-  height: 600px;
-  justify-content: center;
-  text-align: center;
-  background-color: navy;
-  border-radius: 10%;
-  /* overflow: hidden; */
-  background-image: url("./media/family_gathering.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-}
-
-.home-info > p {
-  font-family: fantasy;
-  font-size: 1.2em;
-  text-align: right;
-  color: rgb(244, 244, 252);
-  padding: 16px;
-  max-width: 600px;
-}
 
 /* *******members page********** */
 
-#members-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap:wrap;
-  justify-content: flex-start;
-  width: 100%;
-  padding: 20px;
-}
 
-/* *******members small cards********** */
-
-.member-small {
-  border: solid 3px black;
-  padding: 5px;
-  margin: 5%;
-  text-align: center;
-  color: black;
-  background-color: lightslategray;
-  text-decoration: none;
-}
-
-
-.member-small a {
-  text-decoration: none;
-}
-
-.member-small img {
-  width: 60px;
-  height: 60px
-}
-
-.members-large {
-  background-color: black;
-}
-
-
-/* *******expanded member details********** */
-
-div.Members-wrapper {
-  display: block
-}
-.member-details {
-  background-color: navy;
-  color: rgb(244, 244, 252);
-  border-radius: 20px;
-  overflow: hidden;
-  padding: 20px;
-  margin: 20px;
-}
-
-.member-details a {
-  color: black;
-  font-size: .8em;
-}
-
-.expanded-btns-container{
-  display: flex;
-}
-
-.member-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 50%;
-}
-
-.member-details img {
-  width: 60px;
-  height: 60px;
-}
-
-.item-cards{
-  display: flex;
-  flex-direction: row;
-  overflow: hidden;
-  justify-content: space-around;
-  /* width: 800px; */
-}
-
-.item-card {
-  /* flex: 0 0 300px; */
-  flex-basis: 400px;
-  flex-grow: 0;
-  border: solid 1px black;
-  word-wrap: break-word;
-  overflow: hidden;
-  margin: 2%;
-  padding: 2%;
-  width: 0px;
-}
-
-/* *******new member form********** */
-
-.NewMember-wrapper{
-  display: flex;
-  flex-direction: column;
-  align-items:center;
-}
-
-form {
-  background-color: lightslategrey;
-  border-radius: 20px;
-  width: 800px;
-  padding: 30px;
-}
-
-.form-section1{
-  display: grid;
-  grid-template-columns: 50% 50%;
-}
-
-.first-name { 
-  grid-column: 1 / 2;
-}
-
-.last-name { 
-  grid-column: 2 / 3;
-}
-
-.profile-pic{
-  grid-column: 1 / 3;
-}
-
-.new-item-wrapper{
-  display: flex;
-  flex-direction: column;
-  align-items:center;
-  padding: 20px;
-}
 
 
 

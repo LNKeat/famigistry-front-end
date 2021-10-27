@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./Members.css";
 import MemberCard from "./MemberCard.js"
 import MemberDetails from "./MemberDetails.js"
 
@@ -35,7 +36,7 @@ function Members({ members, updateMemberList }) {
         {
           memberExpanded ? <MemberDetails member={memberExpanded} closeExpand={closeExpand} /> : null
         }
-        <div id="members-list">
+        <div className="members-list">
           {members.map(member => <MemberCard key={member.id} member={member} handleExpandView={handleExpandView} />)}
         </div>
       </div>

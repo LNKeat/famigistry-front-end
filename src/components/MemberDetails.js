@@ -17,7 +17,6 @@ function MemberDetails({ member, closeExpand, handleClick }) {
       <div className="member-info">
         <h2>{nameFirst} {nameLast}'s Wishlist:</h2>
         <h3>{id}</h3>
-        {/* <Link to={`/members/${member.id}`}>Add item to wishlist</Link> */}
         <img src={pic} alt="" />
       </div>
       <div className="item-cards">

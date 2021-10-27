@@ -1,0 +1,27 @@
+.home-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.home-info {
+  width: 800px;
+  height: 600px;
+  justify-content: center;
+  text-align: center;
+  background-color: navy;
+  border-radius: 10%;
+  /* overflow: hidden; */
+  background-image: url("../media/family_gathering.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+.home-info > p {
+  font-family: fantasy;
+  font-size: 1.2em;
+  text-align: right;
+  color: rgb(244, 244, 252);
+  padding: 16px;
+  max-width: 600px;
+}

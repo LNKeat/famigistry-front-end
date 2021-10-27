@@ -6,8 +6,6 @@ import Home from './components/Home';
 import Members from './components/Members';
 import NewMemberForm from './components/NewMemberForm';
 import DisplayMember from './components/DisplayMember'
-import AddItemForm from './components/AddItemForm';
-import MemberDetails from './components/MemberDetails';
 
 const membersAPI = 'http://localhost:3000/members'
 
@@ -87,9 +85,6 @@ function App() {
         <Route path="/member/:id" >
           <DisplayMember handleAddItem={handleAddItem} />
         </Route>
-        {/*<Route component={AddItemForm} handleAddItem={handleAddItem} />
-         <Route component={MemberDetails} /> */}
-
       </Switch>
     </>
   );
