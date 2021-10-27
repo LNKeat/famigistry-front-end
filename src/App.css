@@ -6,105 +6,176 @@ body, html {
   margin: 0;
   max-width: 100%;
   height: 100%;
+  background-color: rgb(244, 244, 252);
 }
 
 #root {
-  display: grid;
-  grid-template-rows: 30% auto;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   margin: 0;
   height: 100%;
 }
 
-header {
-  grid-row: 1 / 2;
-  padding: 5% 2% 0 5%;
-  background-color: lightskyblue;
-  color: darkblue;
+input {
+  width: 95%;
+  margin: 5px;
+  font-size: 1em;
 }
-.nav-bar {
-  display: grid;
+
+label {
+  margin: 5px;
+  padding: 5px;
+  font-size: 1em;
+}
+
+button {
+  height: 40px;
+  font-size: 1em;
+  background-color: lightslategrey;
+  color: rgb(244, 244, 252);
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid black;
+}
+
+.close-btn{
+  margin-bottom: 15px;
+}
+
+/* *******header & navbar********** */
+
+header {
+  display: flex;
   justify-content: space-between;
-  grid-template-columns: 60% auto;
-  grid-template-rows: 60% 30%;
-  padding: 0;
-  margin: 0;
+  padding: 20px;
+  background-color: slategray;
+  min-width: 830px;
 }
 
 #logo{
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
+  color: navy;
   font-family: fantasy;
   font-size: 3em;
 }
 
-#home-btn{
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  width: 110px;
+.nav-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+  align-self: flex-end;
+  padding: 0;
+  margin: 0;
+  height: 76px;
+  width: 380px;
 }
 
-#find-btn{
-  grid-column: 3 / 4;
-  grid-row: 2 / 3;
-  width: 110px;
-}
-#add-btn{
-  grid-column: 4 / 5;
-  grid-row: 2 / 3;
-  width: 110px;
-}
+/* *******components********** */
 
 main, 
 .Members-wrapper,
 .NewMember-wrapper {
-  grid-row: 2 / 5;
+  display: flex;
   padding: 20px;
   margin: 0;
-  background-color: blanchedalmond;
+  background-color: rgb(244, 244, 252);
+  /* height: 100%; */
 }
 
-/* home page--- */
+/* *******home page********** */
 
-.home-info {
+.home-wrapper {
   display: flex;
   justify-content: center;
-  width: 80%;
-  height: 80%;
+}
+
+.home-info {
+  width: 800px;
+  height: 600px;
+  justify-content: center;
+  text-align: center;
+  background-color: navy;
+  border-radius: 10%;
   /* overflow: hidden; */
   background-image: url("./media/family_gathering.jpg");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 100%;
 }
 
 .home-info > p {
-  /* flex: 0 0; */
   font-family: fantasy;
-  text-align: center;
-  color: white;
-  width: 80%;
-  padding: 30px;
+  font-size: 1.2em;
+  text-align: right;
+  color: rgb(244, 244, 252);
+  padding: 16px;
+  max-width: 600px;
 }
 
-
-/* members page */
-
-.members-small-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 100%;
-}
+/* *******members page********** */
 
 #members-list {
-  grid-column: 1 / 2;
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 20px;
 }
 
-/* expanded member details---- */
+/* *******members small cards********** */
 
+.member-small {
+  border: solid 3px black;
+  padding: 5px;
+  margin: 5%;
+  text-align: center;
+  color: black;
+  background-color: lightslategray;
+  text-decoration: none;
+}
+
+
+.member-small a {
+  text-decoration: none;
+}
+
+.member-small img {
+  width: 60px;
+  height: 60px
+}
+
+.members-large {
+  background-color: black;
+}
+
+
+/* *******expanded member details********** */
+
+div.Members-wrapper {
+  display: block
+}
 .member-details {
-  background-color: lightskyblue;
+  background-color: navy;
+  color: rgb(244, 244, 252);
+  border-radius: 20px;
   overflow: hidden;
-  /* grid-column: 2 / 3; */
+  padding: 20px;
+  margin: 20px;
+}
+
+.member-details a {
+  color: black;
+  font-size: .8em;
+}
+
+.expanded-btns-container{
+  display: flex;
+}
+
+.member-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
 }
 
 .member-details img {
@@ -122,31 +193,57 @@ main,
 
 .item-card {
   /* flex: 0 0 300px; */
-  flex-basis: 300px;
+  flex-basis: 400px;
   flex-grow: 0;
   border: solid 1px black;
   word-wrap: break-word;
   overflow: hidden;
   margin: 2%;
   padding: 2%;
+  width: 0px;
+}
+
+/* *******new member form********** */
+
+.NewMember-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+
+form {
+  background-color: lightslategrey;
+  border-radius: 20px;
+  width: 800px;
+  padding: 30px;
+}
+
+.form-section1{
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.first-name { 
+  grid-column: 1 / 2;
+}
+
+.last-name { 
+  grid-column: 2 / 3;
+}
+
+.profile-pic{
+  grid-column: 1 / 3;
+}
+
+.new-item-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  padding: 20px;
 }
 
 
-/* members cards small version */
-.member-small {
-  border: solid 3px black;
-  padding: 5px;
-  margin: 5px;
-  text-align: center;
-}
 
-.member-small img {
-  width: 60px;
-  height: 60px
-}
 
-.members-large {
-  background-color: black;
-}
 
 

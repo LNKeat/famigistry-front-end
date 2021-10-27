@@ -1,10 +1,16 @@
+import { Link } from 'react-router-dom'
+
+
+
 function MemberCard({ member, handleExpandView }){
   return (
+    <Link to={`/member/${member.id}`} style={{textDecoration:"none"}}>
     <div className="member-small" onClick={() => handleExpandView(member)}>
       <h2>{member.nameFirst} {member.nameLast}</h2>
       <img src={member.pic} alt="member" />
       <h3>Items in wishlist: {member.wishlist.length}</h3>
     </div>
+    </Link>
   )
 }
 

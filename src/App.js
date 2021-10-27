@@ -5,6 +5,9 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Members from './components/Members';
 import NewMemberForm from './components/NewMemberForm';
+import DisplayMember from './components/DisplayMember'
+import AddItemForm from './components/AddItemForm';
+import MemberDetails from './components/MemberDetails';
 
 const membersAPI = 'http://localhost:3000/members'
 
@@ -48,8 +51,24 @@ function App() {
     })
   }
 
-  function handleAddItem(member){
+  function handleAddItem(member, item){
+    const {id, wishlist} = member
+    const newWishList = [...wishlist, item]
+    const updatedMember = {...member, wishlist:newWishList}
+    // console.log(updatedMember)
 
+    fetch(`${membersAPI}/${id}`, {
+      method: 'PATCH',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(updatedMember)
+    })
+    .then(res => res.json())
+    .then(newMemberData => {
+      const updatedList = [...fullMemberList, newMemberData]
+      setMemberList(updatedList)
+    })
   }
 
   return (
@@ -59,12 +78,18 @@ function App() {
         <Route exact path="/members">
           <Members members={memberList} updateMemberList={updateMemberList} />
         </Route>
-        <Route exact path="/add">
+        <Route exact path="/add-member">
           <NewMemberForm handleSubmit={handleNewMemberSubmit} />
         </Route>
         <Route exact path="/">
           <Home />
         </Route>
+        <Route path="/member/:id" >
+          <DisplayMember handleAddItem={handleAddItem} />
+        </Route>
+        {/*<Route component={AddItemForm} handleAddItem={handleAddItem} />
+         <Route component={MemberDetails} /> */}
+
       </Switch>
     </>
   );

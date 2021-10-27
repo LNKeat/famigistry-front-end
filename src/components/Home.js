@@ -1,9 +1,7 @@
-import family from "../media/family_gathering.jpg"
-
 
 function Home() {
   return (
-    <main>
+    <main className="home-wrapper">
       <div className="home-info">
          <p>
             Welcome to this registry for creating and searching wish lists

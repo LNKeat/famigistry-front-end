@@ -15,23 +15,26 @@ function Members({ members, updateMemberList }) {
     setMemberExpanded(member)
   }
 
-  function closeExpand(){
+  function closeExpand() {
     setMemberExpanded(null)
   }
 
   return (
     <div className="Members-wrapper">
-      <h1>Find a member</h1>
-      <p>You can view an established member's wishlist or add to it. </p>
-      <label>Search by name or member id:</label>
-      <input className="add-Member-input" onChange={handleChange} type="text" name="search" placeholder="Search" value={searchInput} />
+      <div className="search-section">
+        <h1>Find a member</h1>
+        <p>You can view an established member's wishlist or add to it. </p>
+        <label>Search by name or member id:  </label>
+        <input className="add-Member-input" onChange={handleChange} type="text" name="search" placeholder="Search" value={searchInput} />
 
-      <h3>Members:</h3>
-      <p>Click on a member to expand details: </p>
-      <div id="members-small-container">
+        <h3>Members:</h3>
+        <p>Click on a member to expand details: </p>
+      </div>
+
+      <div className="members-small-container">
         {
           memberExpanded ? <MemberDetails member={memberExpanded} closeExpand={closeExpand} /> : null
-          }
+        }
         <div id="members-list">
           {members.map(member => <MemberCard key={member.id} member={member} handleExpandView={handleExpandView} />)}
         </div>

@@ -2,30 +2,30 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const linkStyles = {
-  flex: 1,
   padding: "10px",
-  border: "solid 1px blanchedalmond",
-  background: "blue",
+  border: "solid 1px rgb(244, 244, 252)",
+  background: "lightslategrey",
   textDecoration: "none",
-  color: "blanchedalmond",
-  verticalAlign: "center", 
-  textAlign: "center"
+  color: "rgb(244, 244, 252)",
+  textAlign: "center", 
+  width: "110px",
+  height: "90%"
 };
 
 function NavBar(){
   return (
     <header>
+      <h1 id="logo">Famigistry.com</h1>
       <div className="nav-bar">
-        <h1 id="logo">Famigistry.com</h1>
-      <NavLink to="/" exact id="home-btn" style={linkStyles} activeStyle={{background: "darkblue"}}>
-        Home
-      </NavLink>
-      <NavLink to="/members" exact id="find-btn" style={linkStyles} activeStyle={{background: "darkblue"}}>
-        Find Member
-      </NavLink>
-      <NavLink to="/add" exact id="add-btn" style={linkStyles} activeStyle={{background: "darkblue"}}>
-        Add Member
-      </NavLink>
+        <NavLink to="/" exact id="home-btn" style={linkStyles} activeStyle={{background: "slategray", border: "solid 3px black", color: "black"}}>
+          Home
+        </NavLink>
+        <NavLink to="/members" exact id="find-btn" style={linkStyles} activeStyle={{background: "slategray", border: "solid 3px black", color: "black"}}>
+          Find Member
+        </NavLink>
+        <NavLink to="/add-member" exact id="add-btn" style={linkStyles} activeStyle={{background: "slategray", border: "solid 3px black", color: "black"}}>
+          Add Member
+        </NavLink>
       </div>
     </header>
   )
