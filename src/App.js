@@ -7,7 +7,7 @@ import Members from './components/Members';
 import NewMemberForm from './components/NewMemberForm';
 import DisplayMember from './components/DisplayMember'
 
-const membersAPI = 'http://localhost:3000/members'
+const membersAPI = 'http://localhost:3000/members' 
 
 function App() {
   const history = useHistory()

@@ -8,7 +8,9 @@ function MemberDetails({ member, closeExpand, handleClick }) {
     <div className="member-details">
       <div className="expanded-btns-container">
         <Link to={"/members/"} style={{ textDecoration: "none" }}>
-          <button className="close-btn" onClick={closeExpand}>X</button>
+          <button className="close-btn" onClick={closeExpand}>
+            X
+          </button>
         </Link>
         <div>
           <button onClick={handleClick}>Add items to wishlist</button>

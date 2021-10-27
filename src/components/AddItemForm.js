@@ -36,7 +36,7 @@ function AddItemForm({ member, handleAddItem, hideForm }) {
   return (
     <div className="new-item-wrapper">
       
-      <h1>Add Item</h1>
+      <h1>Add item to {member.nameFirst}'s wishlist</h1>
       <form onSubmit={handleSubmit}>
         <button className="close-btn" onClick={hideForm}>X</button><br />
         <label>Item </label>

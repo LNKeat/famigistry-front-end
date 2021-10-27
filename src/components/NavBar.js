@@ -10,7 +10,8 @@ const linkStyles = {
   color: "rgb(244, 244, 252)",
   textAlign: "center", 
   width: "110px",
-  height: "90%"
+  height: "90%",
+  borderRadius: "4px"
 };
 
 function NavBar(){

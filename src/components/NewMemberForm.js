@@ -17,7 +17,7 @@ function NewMemberForm({ handleSubmit }) {
 
   return (
     <div className="NewMember-wrapper">
-      <h1>New Member Form Page</h1>
+      <h1>Create a new member profile</h1>
       <form className="add-member-form" onSubmit={(e) => handleSubmit(e, newMemData)}>
         <div className="form-section1">
           <div className="first-name">
