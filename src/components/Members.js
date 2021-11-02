@@ -1,26 +1,23 @@
 import React, { useState } from 'react';
 import "./Members.css";
 import MemberCard from "./MemberCard.js"
-import MemberDetails from "./MemberDetails.js"
 
-function Members({ members, onChange }) {
+function Members({ fullMembers }) {
   const [searchInput, setSearchInput] = useState('')
-  const [memberExpanded, setMemberExpanded] = useState(null)
+  const [filteredMembers, setFilteredMembers] = useState(fullMembers)
+
 
   function handleChange(e) {
     setSearchInput(e.target.value)
-    onChange && onChange(e.target.value)
+    handleMemberListChange(e.target.value)
   }
 
-  function handleExpandView(member) {
-    setMemberExpanded(member)
+  function handleMemberListChange (search){
+    const filteredList = fullMembers.filter(member => {
+      return member.nameFirst.toLowerCase().includes(search.toLowerCase()) || member.nameLast.toLowerCase().includes(search.toLowerCase()) || member.id.toString().includes(search)
+    })
+    setFilteredMembers(filteredList)
   }
-
-  function closeExpand() {
-    setMemberExpanded(null)
-  }
-
-
 
   return (
     <div className="Members-wrapper">
@@ -37,7 +34,7 @@ function Members({ members, onChange }) {
 
         <div className="members-small-container">
           <div className="members-list">
-            {members.map(member => <MemberCard key={member.id} member={member} handleExpandView={handleExpandView} />)}
+            {filteredMembers.map(member => <MemberCard key={member.id} member={member} />)}
           </div>
         </div>
       </div>

@@ -2,15 +2,14 @@ import { Link } from 'react-router-dom'
 import ItemCard from "./ItemCard";
 
 
-function MemberDetails({ member, closeExpand, handleClick, membersAPI, setDisplayedMember }) {
+function MemberDetails({ member, handleClick, membersAPI, setDisplayedMember }) {
   const { id, nameFirst, nameLast, pic, wishlist } = member
 
-  console.log(member)
   return (
     <div className="member-details">
       <div className="expanded-btns-container">
         <Link to={"/members/"} style={{ textDecoration: "none" }}>
-          <button className="close-btn" onClick={closeExpand}>
+          <button className="close-btn">
             X
           </button>
         </Link>

@@ -11,25 +11,17 @@ const membersAPI = 'http://localhost:3000/members'
 
 function App() {
   const history = useHistory()
-  const [memberList, setMemberList] = useState([]);
   const [fullMemberList, setFullMemberList] = useState([]);
 
   useEffect(() => {
    fetch(membersAPI)
    .then(res => res.json())
    .then(membersData => {
-     setMemberList(membersData)
      setFullMemberList(membersData)
    })
   }, [])
 
 
-  function handleMemberListChange (search){
-    const filteredList = fullMemberList.filter(member => {
-      return member.nameFirst.toLowerCase().includes(search.toLowerCase()) || member.nameLast.toLowerCase().includes(search.toLowerCase()) || member.id.toString().includes(search)
-    })
-    setMemberList(filteredList)
-  }
 
   function handleNewMemberSubmit(e, newMember){
     e.preventDefault()
@@ -43,7 +35,6 @@ function App() {
     .then(res => res.json())
     .then(newMemberData => {
       const updatedList= [newMemberData, ...fullMemberList] 
-      setMemberList(updatedList)
       setFullMemberList(updatedList)
       history.push(`/members/`)
     })
@@ -69,7 +60,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/members">
-          <Members members={memberList} onChange={handleMemberListChange} />
+          <Members fullMembers={fullMemberList} />
         </Route>
         <Route exact path="/add-member">
           <NewMemberForm handleSubmit={handleNewMemberSubmit} />
