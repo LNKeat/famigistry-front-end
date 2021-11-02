@@ -8,7 +8,9 @@ function AddItemForm({ member, handleAddItem, hideForm }) {
     price: "$",
     url: "",
     desc: "",
-    specs: ""
+    specs: "", 
+    store: "", 
+    purchased: false
   })
 
   function handleChange(e){
@@ -29,7 +31,9 @@ function AddItemForm({ member, handleAddItem, hideForm }) {
       price: "$",
       url: "",
       desc: "",
-      specs: ""
+      specs: "",
+      store: "",
+      purchased: false
     })
   }
 
@@ -41,10 +45,12 @@ function AddItemForm({ member, handleAddItem, hideForm }) {
         <button className="close-btn" onClick={hideForm}>X</button><br />
         <label>Item </label>
         <input type="text" name="item" placeholder="Item name" onChange={handleChange} value={formData.item} />
-        <label>Price (usd) </label>
-        <input type="text" name="price" placeholder="$" onChange={handleChange} value={formData.price} />
+        <label>Store </label>
+        <input type="text" name="store" placeholder="Store" onChange={handleChange} value={formData.store} />
         <label>Item Link </label>
         <input type="text" name="url" placeholder="url" onChange={handleChange} value={formData.url} />
+        <label>Price (usd) </label>
+        <input type="text" name="price" placeholder="$" onChange={handleChange} value={formData.price} />
         <label>Item Description (color, material, etc.) </label>
         <input type="text" name="desc" placeholder="Description" onChange={handleChange} value={formData.desc} />
         <label>Item Specifications (size, model, etc.) </label>

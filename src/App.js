@@ -15,6 +15,7 @@ function App() {
   const [fullMemberList, setFullMemberList] = useState([]);
 
   useEffect(() => {
+    debugger
    fetch(membersAPI)
    .then(res => res.json())
    .then(membersData => {
@@ -45,7 +46,7 @@ function App() {
       const updatedList= [newMemberData, ...fullMemberList] 
       setMemberList(updatedList)
       setFullMemberList(updatedList)
-      history.push("/members")
+      history.push(`/members/`)
     })
   }
 
@@ -53,7 +54,6 @@ function App() {
     const {id, wishlist} = member
     const newWishList = [...wishlist, item]
     const updatedMember = {...member, wishlist:newWishList}
-    // console.log(updatedMember)
 
     fetch(`${membersAPI}/${id}`, {
       method: 'PATCH',
@@ -66,6 +66,8 @@ function App() {
     .then(newMemberData => {
       const updatedList = [...fullMemberList, newMemberData]
       setMemberList(updatedList)
+      setFullMemberList(updatedList)
+      history.push(`/member/${id}`)
     })
   }
 
@@ -83,7 +85,7 @@ function App() {
           <Home />
         </Route>
         <Route path="/member/:id" >
-          <DisplayMember handleAddItem={handleAddItem} />
+          <DisplayMember handleAddItem={handleAddItem} membersAPI={membersAPI}  />
         </Route>
       </Switch>
     </>

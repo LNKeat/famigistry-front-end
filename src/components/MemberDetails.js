@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import ItemCard from "./ItemCard";
 
 
-function MemberDetails({ member, closeExpand, handleClick }) {
+function MemberDetails({ member, closeExpand, handleClick, membersAPI, setDisplayedMember }) {
   const { id, nameFirst, nameLast, pic, wishlist } = member
   return (
     <div className="member-details">
@@ -23,7 +23,7 @@ function MemberDetails({ member, closeExpand, handleClick }) {
       </div>
       <div className="item-cards">
         {
-          wishlist && wishlist.map(item => <ItemCard key={item.id} item={item} />)
+          wishlist && wishlist.map(item => <ItemCard key={item.id} item={item} member={member} membersAPI={membersAPI} setDisplayedMember={setDisplayedMember} />)
         }
       </div>
 

@@ -14,7 +14,6 @@
   flex-direction: row;
   flex-wrap:wrap;
   justify-content: flex-start;
-  align-items:stretch;
   width: 100%;
   padding: 20px;
 }
@@ -28,11 +27,12 @@
   border: solid 3px black;
   border-radius: 10px;
   padding: 5px;
-  margin: 5%;
+  margin: 20px 10px;
   text-align: center;
   color: black;
   background-color: lightslategray;
   text-decoration: none;
+  min-height: fit-content;
 }
 
 .member-small:hover {
@@ -66,14 +66,15 @@ div.Members-wrapper {
   margin: 20px;
 }
 
-a.item-card {
+.item-card a {
   color: rgb(244, 244, 252);
-  text-decoration: none;
-  font-size: .8em;
+  font-size: 1em;
 }
-a.item-card:hover {
+div.item-card a:hover {
   background-color: lightslategrey;
   color: black;
+  font-size: 1.2em;
+  padding: 10px;
 }
 
 
@@ -86,6 +87,7 @@ a.item-card:hover {
   flex-direction: row;
   justify-content: space-between;
   width: 50%;
+  max-width: 600px;
 }
 
 .member-details img {
@@ -93,26 +95,47 @@ a.item-card:hover {
   height: 60px;
 }
 
+.purchased {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: fit-content;
+  padding: 20px 10px 20px 0;
+}
+.purchased > input {
+  width: 20px;
+  height: 20px;
+}
+
 .item-cards{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   overflow: hidden;
-  justify-content: space-around;
+  justify-content: flex-start;
   /* width: 800px; */
 }
 
 .item-card {
   /* flex: 0 0 300px; */
-  flex-basis: 400px;
-  flex-grow: 0;
+  flex-basis: 300px;
   border: solid 1px rgb(244, 244, 252);
   border-radius: 10px;
   word-wrap: break-word;
   overflow: hidden;
-  margin: 2%;
+  margin: 10px;
   padding: 2%;
   width: 0px;
+  min-width: 160px;
 }
+.item-card.bought,
+a.item-card.bought:hover {
+  background-color: rgb(46, 45, 45);
+  color: lightslategray;
+}
+
+
 
 /* *******new member form********** */
 
