@@ -3,13 +3,13 @@ import "./Members.css";
 import MemberCard from "./MemberCard.js"
 import MemberDetails from "./MemberDetails.js"
 
-function Members({ members, updateMemberList }) {
+function Members({ members, onChange }) {
   const [searchInput, setSearchInput] = useState('')
   const [memberExpanded, setMemberExpanded] = useState(null)
 
   function handleChange(e) {
     setSearchInput(e.target.value)
-    updateMemberList(e.target.value)
+    onChange && onChange(e.target.value)
   }
 
   function handleExpandView(member) {

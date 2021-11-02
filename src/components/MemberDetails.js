@@ -4,6 +4,8 @@ import ItemCard from "./ItemCard";
 
 function MemberDetails({ member, closeExpand, handleClick, membersAPI, setDisplayedMember }) {
   const { id, nameFirst, nameLast, pic, wishlist } = member
+
+  console.log(member)
   return (
     <div className="member-details">
       <div className="expanded-btns-container">

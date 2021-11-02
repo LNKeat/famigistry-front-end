@@ -15,7 +15,6 @@ function App() {
   const [fullMemberList, setFullMemberList] = useState([]);
 
   useEffect(() => {
-    debugger
    fetch(membersAPI)
    .then(res => res.json())
    .then(membersData => {
@@ -25,7 +24,7 @@ function App() {
   }, [])
 
 
-  function updateMemberList (search){
+  function handleMemberListChange (search){
     const filteredList = fullMemberList.filter(member => {
       return member.nameFirst.toLowerCase().includes(search.toLowerCase()) || member.nameLast.toLowerCase().includes(search.toLowerCase()) || member.id.toString().includes(search)
     })
@@ -50,25 +49,19 @@ function App() {
     })
   }
 
-  function handleAddItem(member, item){
-    const {id, wishlist} = member
-    const newWishList = [...wishlist, item]
-    const updatedMember = {...member, wishlist:newWishList}
-
-    fetch(`${membersAPI}/${id}`, {
-      method: 'PATCH',
+  function handleAddItem(updatedMember){
+   fetch(`${membersAPI}/${updatedMember.id}`, {
+      method: 'PUT',
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(updatedMember)
     })
-    .then(res => res.json())
-    .then(newMemberData => {
-      const updatedList = [...fullMemberList, newMemberData]
-      setMemberList(updatedList)
-      setFullMemberList(updatedList)
-      history.push(`/member/${id}`)
-    })
+    // const newMemberData = await response.json() 
+    //   const updatedList = [...fullMemberList, newMemberData]
+    //   setMemberList(updatedList)
+    //   setFullMemberList(updatedList)
+  
   }
 
   return (
@@ -76,7 +69,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/members">
-          <Members members={memberList} updateMemberList={updateMemberList} />
+          <Members members={memberList} onChange={handleMemberListChange} />
         </Route>
         <Route exact path="/add-member">
           <NewMemberForm handleSubmit={handleNewMemberSubmit} />
@@ -84,8 +77,8 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/member/:id" >
-          <DisplayMember handleAddItem={handleAddItem} membersAPI={membersAPI}  />
+        <Route path="/members/:id" >
+          <DisplayMember onAddItem={handleAddItem} membersAPI={membersAPI}  />
         </Route>
       </Switch>
     </>

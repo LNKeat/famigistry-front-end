@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 
-function AddItemForm({ member, handleAddItem, hideForm }) {
+function AddItemForm({ member, onAddItem, hideForm }) {
   const [formData, setFormData] = useState({
     id: 0,
     item: "",
@@ -21,10 +21,13 @@ function AddItemForm({ member, handleAddItem, hideForm }) {
   }
 
   function handleSubmit(e){
-    // e.preventDefault()
+    e.preventDefault()
     const itemID = member.wishlist.length + 1
     const newItem = {...formData, id:itemID}
-    handleAddItem(member, newItem)
+    const {id, wishlist} = member
+    const newWishList = [...wishlist, newItem]
+    const updatedMember = {...member, wishlist:newWishList}
+    onAddItem  && onAddItem(updatedMember)
     setFormData({
       id: 0,
       item: "",

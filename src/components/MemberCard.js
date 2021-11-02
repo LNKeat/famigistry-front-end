@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function MemberCard({ member, handleExpandView }){
   return (
-    <Link to={`/member/${member.id}`} style={{textDecoration:"none"}}>
+    <Link to={`/members/${member.id}`} style={{textDecoration:"none"}}>
     <div className="member-small" onClick={() => handleExpandView(member)}>
       <h2>{member.nameFirst} {member.nameLast}</h2>
       <h3>Member ID: {member.id}</h3>
