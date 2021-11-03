@@ -60,7 +60,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/members">
-          <Members fullMembers={fullMemberList} />
+          <Members fullMembers={fullMemberList} membersAPI={membersAPI} />
         </Route>
         <Route exact path="/add-member">
           <NewMemberForm handleSubmit={handleNewMemberSubmit} />

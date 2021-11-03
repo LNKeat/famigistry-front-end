@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./Members.css";
 import MemberCard from "./MemberCard.js"
 
-function Members({ fullMembers }) {
+function Members({ fullMembers, membersAPI }) {
   const [searchInput, setSearchInput] = useState('')
-  const [filteredMembers, setFilteredMembers] = useState(fullMembers)
+  const [filteredMembers, setFilteredMembers] = useState([])
 
+ useEffect(() => {
+  if(filteredMembers.length < 1){
+    fetch(membersAPI)
+   .then(res => res.json())
+   .then(membersData => {
+     setFilteredMembers(membersData)
+   })
+  }
+  }, [])
 
   function handleChange(e) {
     setSearchInput(e.target.value)

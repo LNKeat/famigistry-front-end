@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 function MemberCard({ member, handleExpandView }){
+  
   return (
     <Link to={`/members/${member.id}`} style={{textDecoration:"none"}}>
     <div className="member-small">
